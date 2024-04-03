@@ -3,7 +3,7 @@ export async function getServerSideProps({params}){
     const {cryptoId} = params;
     const res = await fetch(`https://api.coincap.io/v2/assets/${cryptoId}`);
     const data = await res.json();
-    const crypto = data?.data;
+    const crypto = data.data;
 
     return {
         props: {
