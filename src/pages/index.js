@@ -1,13 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
 
-export async function getServerSideProps(){
+
+export async function getStaticProps(){
     const res = await fetch('https://api.coincap.io/v2/assets');
     const data = await res.json();
+    const cryptos = data.data;
 
     return{
         props:{
-            cryptos: data?.data,
+            cryptos,
         }
     }
 }
@@ -25,7 +27,7 @@ export default function Home({cryptos}){
                 <ul>
                     {cryptos.map(crypto => (
                         <li key={crypto.id}>
-                            <Link href={`${crypto.id}`}>{crypto.name}</Link><p> USD: {parseFloat(crypto.priceUsd).toFixed(2)} $ </p> {/* Ponemos dos decimales solo para el precio */}
+                            <Link href={`/crypto/${crypto.id}`}>{crypto.name}</Link><p> USD: {parseFloat(crypto.priceUsd).toFixed(2)} $ </p> {/* Ponemos dos decimales solo para el precio */}
                         </li>
                     ))}
                 </ul>
