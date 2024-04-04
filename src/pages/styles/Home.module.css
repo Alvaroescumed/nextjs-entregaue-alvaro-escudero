@@ -1,0 +1,51 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #343a40;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.description{
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 40%;
+}
+
+.list li {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.list li a {
+    color: #cb8946;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+
+.price {
+    font-size: 18px;
+    color: #28a745;
+}
+
